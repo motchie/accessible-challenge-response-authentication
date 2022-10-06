@@ -5,6 +5,7 @@
         <title>アクセシブルなチャレンジ・レスポンス認証のテスト</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
           const sendMessage = () => {
@@ -31,6 +32,7 @@
             <div class="container">
                 <form>
                     <div class="mb-3">
+                      <div class="cf-turnstile" data-sitekey="0x4AAAAAAAAwvhBF0G0fE7ui"></div> 
                       <label for="exampleInputName1" class="form-label">お名前</label>
                       <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp">
                       <div id="nameHelp" class="form-text">テスト用のお名前でお願いします。</div>
