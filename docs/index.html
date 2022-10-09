@@ -19,6 +19,9 @@
               }
             })
           }
+          const turnstileVerified = () => {
+            sendbutton.disabled = null
+          }
           window.onload = () => { sendbutton.onclick = () => { sendMessage() } }
         </script>
     </head>
@@ -41,7 +44,7 @@
                       <input type="text" class="form-control" id="exampleInputMessage">
                     </div>
                     <div class="cf-turnstile" data-sitekey="0x4AAAAAAAAwvhBF0G0fE7ui"></div> 
-                    <button id="sendbutton" type="button" class="btn btn-primary">送信</button>
+                    <button id="sendbutton" type="button" data-callback="turnstileVerified" class="btn btn-primary">送信</button>
                   </form>
             </div>
         </main>
