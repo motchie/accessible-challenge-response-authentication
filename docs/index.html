@@ -8,22 +8,9 @@
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
-          const sendMessage = () => {
-            const client = axios({
-              url: 'https://zsrkucsxn3pset5efgrfimtxpe0horwn.lambda-url.ap-northeast-1.on.aws',
-              method: 'post',
-              headers: {'Content-Type': 'application/json'},
-              data: {
-                name: exampleInputName1.value,
-                message: exampleInputMessage.value
-              }
-            })
-          }
           const turnstileVerified = () => {
-              alert('called')
             sendbutton.disabled = false
           }
-          window.onload = () => { sendbutton.onclick = () => { sendMessage() } }
         </script>
     </head>
     <body>
@@ -34,7 +21,7 @@
         </header>
         <main>
             <div class="container">
-                <form>
+                <form method="post" action="https://lk1himecc5.execute-api.ap-northeast-1.amazonaws.com/prod/turnstileverify">
                     <div class="mb-3">
                       <label for="exampleInputName1" class="form-label">お名前</label>
                       <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp">
@@ -45,7 +32,7 @@
                       <input type="text" class="form-control" id="exampleInputMessage">
                     </div>
                     <div class="cf-turnstile" data-sitekey="0x4AAAAAAAAwvhBF0G0fE7ui" data-callback="turnstileVerified"></div> 
-                    <button id="sendbutton" type="button" class="btn btn-primary" disabled>送信</button>
+                    <button id="sendbutton" type="submit" class="btn btn-primary" disabled>送信</button>
                   </form>
             </div>
         </main>
