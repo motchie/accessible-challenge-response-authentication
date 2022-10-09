@@ -24,12 +24,12 @@
                 <form method="post" action="https://lk1himecc5.execute-api.ap-northeast-1.amazonaws.com/prod/turnstileverify">
                     <div class="mb-3">
                       <label for="exampleInputName1" class="form-label">お名前</label>
-                      <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp">
+                      <input type="text" class="form-control" name="exampleInputName1" aria-describedby="nameHelp">
                       <div id="nameHelp" class="form-text">テスト用のお名前でお願いします。</div>
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputMessage" class="form-label">メッセージ</label>
-                      <input type="text" class="form-control" id="exampleInputMessage">
+                      <input type="text" class="form-control" name="exampleInputMessage">
                     </div>
                     <div class="cf-turnstile" data-sitekey="0x4AAAAAAAAwvhBF0G0fE7ui" data-callback="turnstileVerified"></div> 
                     <button id="sendbutton" type="submit" class="btn btn-primary">送信</button>
